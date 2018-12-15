@@ -1,0 +1,56 @@
+#Υπολογίζει τις μετρικές του Halstead που χρειάζονται για τη λύση της 3ης εργασίας
+#Χρήσιμο αν θέλετε να κάνει τη διόρθωση κάποιος μη μηχανικός
+#Ο μηχανικός θα έχει ηδη φτιάξει κάτι καλύτερο για τη δική του λύση
+
+import math
+
+n1 = None
+while n1 is None:                
+    try:
+        s = input("Enter n1: ")
+        n1 = int(s)
+    except ValueError:
+        print("%s is not an integer!" % s)
+
+N1 = None
+while N1 is None:                
+    try:
+        s = input("Enter N1: ")
+        N1 = int(s)
+    except ValueError:
+        print("%s is not an integer!" % s)
+
+n2 = None
+while n2 is None:                
+    try:
+        s = input("Enter n2: ")
+        n2 = int(s)
+    except ValueError:
+        print("%s is not an integer!" % s)
+
+N2 = None
+while N2 is None:                
+    try:
+        s = input("Enter N2: ")
+        N2 = int(s)
+    except ValueError:
+        print("%s is not an integer!" % s)
+
+n=n1+n2
+N=N1+N2
+Nest=n1*math.log(n1,2)+n2*math.log(n2,2)
+V=N*math.log(n,2)
+L=(2*n2)/(n1*N2)
+l=L*L*V
+
+print("n1=%i" % n1)
+print("n2=%i" % n2)
+print("N1=%i" % N1)
+print("N2=%i" % N2)
+print("vocabulary n=%i" % n)
+print("size N=%i" % N)
+print("size estimator Nest=%.4f" % Nest)
+print("Nest/N=%.4f" % (Nest/N))
+print("volume V=%.4f" % V)
+print("program level L=%.4f" % L)
+print("language level λ=%.4f" % l)
